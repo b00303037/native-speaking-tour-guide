@@ -1,0 +1,341 @@
+{
+  "ACTION": {
+    "ADD_TO_CALENDAR": "加入行事曆",
+    "BACK_TO_HOME": "返回首頁",
+    "CANCEL": "取消",
+    "CANCEL_RESERVATION": "取消預約",
+    "CLOSE": "關閉",
+    "CONFIRM": "確認",
+    "DISABLE": "停用",
+    "EDIT": "編輯",
+    "ENABLE": "啟用",
+    "END_SPEECH": "結束發言",
+    "HIDE_PASSWORD": "隱藏密碼",
+    "JOIN_MEETING": "加入會議",
+    "LEAVE_MEETING": "離開會議",
+    "LOGIN": "登入",
+    "LOGOUT": "登出",
+    "PLAY_AUDIO": "翻譯語音",
+    "RANDOM": "隨機",
+    "REFRESH": "重新整理",
+    "REQUEST_TO_SPEAK": "請求發言",
+    "RESEND": "重新寄送",
+    "SCAN_QR_CODE": "掃描 QR 碼",
+    "SCHEDULE": "預約",
+    "SCHEDULE_A_MEETING": "預約會議",
+    "SELECT_LANGUAGE": "選擇語言",
+    "SELECT_MIC": "選擇麥克風",
+    "SHOW_PASSWORD": "顯示密碼",
+    "SIGN_UP": "註冊",
+    "START": "發起",
+    "START_A_MEETING": "發起會議",
+    "UPDATE": "更新"
+  },
+  "COMPONENTS": {
+    "CONFIRM_CANCEL_RESERVATION": {
+      "CANCEL_BUTTON_TEXT": "放棄",
+      "CONFIRM_BUTTON_TEXT": "取消預約",
+      "TITLE": "確認取消預約？",
+      "MESSAGE": {
+        "RESERVATION_CANCELLED": "預約已取消"
+      }
+    },
+    "CONFIRM_DISABLE_PLAY_AUDIO": {
+      "TITLE": "停用翻譯語音功能？"
+    },
+    "CONFIRM_ENABLE_PLAY_AUDIO": {
+      "CONTENT": "建議配戴耳機，以獲得最佳的翻譯語音體驗。",
+      "TITLE": "啟用翻譯語音功能？"
+    },
+    "CONFIRM_END_SPEECH": {
+      "TITLE": "結束發言？"
+    },
+    "CONFIRM_GRANT_SPEAKING_PRIVILEGES": {
+      "CONFIRM_BUTTON_TEXT": "開放",
+      "TITLE": "開放發言權？"
+    },
+    "CONFIRM_LEAVE_MEETING": {
+      "CONFIRM_BUTTON_TEXT": "離開",
+      "TITLE": "確認離開會議？"
+    },
+    "CONFIRM_LOGOUT": {
+      "CONFIRM_BUTTON_TEXT": "登出",
+      "TITLE": "確認登出？"
+    },
+    "CONFIRM_PLAY_AUDIO": {
+      "TITLE": "已啟用翻譯語音功能"
+    },
+    "CONFIRM_REQUEST_TO_SPEAK": {
+      "TITLE": "請求發言？"
+    },
+    "CONFIRM_REVOKE_SPEAKING_PRIVILEGES": {
+      "CONFIRM_BUTTON_TEXT": "收回",
+      "TITLE": "收回發言權？"
+    },
+    "LANG_SWITCH": "介面語言",
+    "MEETING_ROOM_ACTION_MENU": {
+      "LANG": {
+        "TITLE": "介面語言"
+      },
+      "MICROPHONE": {
+        "TITLE": "麥克風裝置"
+      },
+      "THEME": {
+        "TITLE": "外觀"
+      },
+      "TRANSLATION_LANGUAGE": {
+        "TITLE": "翻譯語言"
+      }
+    },
+    "MEETING_ROOM_INFO_DIALOG": {
+      "TITLE": "與會人員"
+    },
+    "SCHEDULE_A_MEETING_DIALOG": {
+      "LABEL": {
+        "ACCOUNT": "預約帳號",
+        "END_DATE": "結束日期",
+        "END_TIME": "結束時間",
+        "START_DATE": "開始日期",
+        "START_TIME": "開始時間"
+      },
+      "MESSAGE": {
+        "END_DATETIME_DATE_RANGE": "必須晚於開始時間",
+        "END_DATETIME_FUTURE_DATE": "必須晚於現在時間",
+        "END_DATETIME_INVALID_DATE": "結束日期或時間格式有誤",
+        "END_DATETIME_REQUIRED": "請選擇結束日期和時間",
+        "START_DATETIME_FUTURE_DATE": "必須晚於現在時間",
+        "START_DATETIME_INVALID_DATE": "開始日期或時間格式有誤",
+        "START_DATETIME_REQUIRED": "請選擇開始日期和時間"
+      },
+      "PLACEHOLDER": {
+        "END_DATE": "選擇結束日期",
+        "END_TIME": "選擇結束時間",
+        "START_DATE": "選擇開始日期",
+        "START_TIME": "選擇開始時間"
+      },
+      "TITLE": "預約會議"
+    },
+    "THEME_SWITCH": "外觀"
+  },
+  "ENUM": {
+    "API": {},
+    "SHARED": {
+      "MESSAGE_DISPLAY": {
+        "BOTH": "同時顯示",
+        "TRANSCRIPTION": "原文",
+        "TRANSLATION": "譯文"
+      },
+      "MESSAGE_ORDER": {
+        "ASC": "底部",
+        "DESC": "頂端"
+      },
+      "THEME": {
+        "DARK": "深色",
+        "LIGHT": "淺色",
+        "SYSTEM": "系統"
+      }
+    }
+  },
+  "MESSAGE": {
+    "ANOTHER_USAGE": "您的帳號在其他地方使用服務，當前頁面服務將中斷",
+    "MEETING_ROOM_CLOSED": "會議時間已結束，感謝您的使用！",
+    "MIC_PERMISSION_DENIED": "無法取得麥克風權限",
+    "MIC_RELEASED": "發言權已開放！點擊左下角的麥克風圖示即可請求發言",
+    "NO_QUOTA": "您的服務額度已用完，請加值以繼續使用",
+    "SPEAKER_CHANGED": "您已成為當前發言者",
+    "TERMINATED": "閒置時間過長，服務將自動中斷"
+  },
+  "PAGES": {
+    "HOME": {
+      "MESSAGE": {
+        "ROOM_CODE": "會議代碼格式有誤"
+      },
+      "PLACEHOLDER": {
+        "ROOM_CODE": "輸入會議代碼"
+      },
+      "SUB_TITLE": "解決語別限制及翻譯不便等問題，讓外籍旅客輕鬆暢遊臺灣，實踐「智慧科技島．數位新社會」的願景",
+      "TITLE": "適合所有人使用的即時語音翻譯和導覽服務"
+    },
+    "LOGIN": {
+      "LABEL": {
+        "ACCOUNT": "帳號",
+        "PASSWORD": "密碼"
+      },
+      "MESSAGE": {
+        "ACCOUNT_REQUIRED": "請輸入帳號",
+        "PASSWORD_REQUIRED": "請輸入密碼"
+      },
+      "PLACEHOLDER": {
+        "ACCOUNT": "輸入帳號",
+        "PASSWORD": "輸入密碼"
+      },
+      "TEXT": {
+        "CONTINUE_AS_GUEST": "以訪客身份繼續",
+        "NO_ACCOUNT": "沒有帳號嗎？",
+        "OR": "或"
+      }
+    },
+    "MEETING": {
+      "LABEL": {
+        "MICROPHONE": "麥克風",
+        "NICKNAME": "顯示暱稱",
+        "TRANSLATION_LANGUAGE": "翻譯語言"
+      },
+      "MESSAGE": {
+        "NICKNAME_REQUIRED": "請輸入顯示暱稱",
+        "NOT_FOUND": "找不到您要加入的會議，會議可能已經結束",
+        "ROOM_CODE": "會議代碼格式有誤"
+      },
+      "PLACEHOLDER": {
+        "MICROPHONE": "選擇麥克風",
+        "NICKNAME": "輸入顯示暱稱",
+        "TRANSLATION_LANGUAGE": "選擇翻譯語言"
+      }
+    },
+    "MEETING_CALENDAR": {
+      "MESSAGE": {
+        "NO_RESERVATION": "目前沒有任何未來的會議預約",
+        "RESERVATION_OUTDATED": "預約資訊已過時，請重新整理以查看最新狀態"
+      },
+      "TITLE": "會議行事曆"
+    },
+    "PRIVACY_POLICY": {
+      "TITLE": "隱私權政策"
+    },
+    "SIGNUP": {
+      "LABEL": {
+        "ACCOUNT": "帳號 (電郵地址)",
+        "CONFIRM_PASSWORD": "確認密碼",
+        "PASSWORD": "密碼",
+        "PHONE": "手機號碼"
+      },
+      "MESSAGE": {
+        "ACCOUNT_EMAIL": "電郵地址格式有誤",
+        "ACCOUNT_MINLENGTH": "帳號最小長度為 8 個字元",
+        "ACCOUNT_REQUIRED": "請輸入帳號",
+        "CONFIRM_PASSWORD_REQUIRED": "請再次輸入密碼",
+        "PASSWORD_MATCH": "前後密碼不一致，請重新輸入",
+        "PASSWORD_MINLENGTH": "密碼最小長度為 8 個字元",
+        "PASSWORD_PATTERN": "密碼格式有誤",
+        "PASSWORD_REQUIRED": "請輸入密碼",
+        "PHONE_PATTERN": "手機號碼格式有誤",
+        "PHONE_REQUIRED": "請輸入手機號碼"
+      },
+      "PLACEHOLDER": {
+        "ACCOUNT": "輸入帳號",
+        "CONFIRM_PASSWORD": "再次輸入密碼",
+        "PASSWORD": "輸入密碼",
+        "PHONE": "輸入手機號碼"
+      },
+      "TEXT": {
+        "AGREE_TERMS_1": "點擊「",
+        "AGREE_TERMS_2": "」即表示您同意我們的《",
+        "AGREE_TERMS_3": "》和《",
+        "AGREE_TERMS_4": "》。",
+        "HAVE_AN_ACCOUNT": "已經有帳號嗎？"
+      }
+    },
+    "START_A_MEETING": {
+      "LABEL": {
+        "END_DATE": "結束日期",
+        "END_TIME": "結束時間",
+        "NAME": "會議名稱"
+      },
+      "MESSAGE": {
+        "END_DATETIME_FUTURE_DATE": "必須晚於現在時間",
+        "END_DATETIME_INVALID_DATE": "結束日期或時間格式有誤",
+        "END_DATETIME_REQUIRED": "請選擇結束日期和時間",
+        "NAME_REQUIRED": "請輸入會議名稱"
+      },
+      "PLACEHOLDER": {
+        "END_DATE": "選擇結束日期",
+        "END_TIME": "選擇結束時間",
+        "NAME": "輸入會議名稱"
+      },
+      "TITLE": {
+        "MEETING_DETAILS": "會議詳情",
+        "SUPPORTED_LANGUAGES": "支援語言"
+      }
+    },
+    "TERMS": {
+      "TITLE": "服務條款"
+    },
+    "USER": {
+      "LABEL": {
+        "NICKNAME": "顯示暱稱"
+      },
+      "MESSAGE": {
+        "NICKNAME_REQUIRED": "請輸入顯示暱稱"
+      },
+      "PLACEHOLDER": {
+        "NAME": "輸入顯示暱稱"
+      },
+      "TEXT": {
+        "GUEST": "訪客",
+        "HOST": "主持人",
+        "MEMBER": "會員"
+      },
+      "TITLE": {
+        "ABOUT_ME": "關於我",
+        "TRANSLATION_LANGUAGE": "翻譯語言"
+      }
+    }
+  },
+  "SITEMAP": {
+    "HOME": "首頁",
+    "MEETING_CALENDAR": "會議行事曆",
+    "USER": "偏好設定"
+  },
+  "TEXT": {
+    "HOST": "主持人",
+    "ME": "我",
+    "NEW_MEETING": "{{ account }} 的新會議",
+    "SPEAKER": "發言者"
+  },
+  "api": {
+    "business": {
+      "member.not_exists": "帳號不存在"
+    },
+    "change": {
+      "password.failure": "變更密碼失敗",
+      "password.not_equals": "舊密碼有誤"
+    },
+    "chat": {
+      "create_record_duplicate": "您目前已有進行中的一場會議"
+    },
+    "error": "發生未預期的錯誤，請稍後再試",
+    "expiration": "登入認證已過期，請重新登入",
+    "login": {
+      "email.verify.done": "信箱驗證成功，歡迎登入使用",
+      "email.verify.expire": "驗證連結已過期，請重新註冊一次",
+      "email.verify.failure": "信箱驗證失敗，請重新註冊",
+      "email.verify.undone": "請檢查您的信箱中的驗證信；或重新註冊一次",
+      "failure": "帳號或密碼有誤",
+      "password_required": "密碼為必填欄位",
+      "sms.verify.done": "簡訊驗證成功，歡迎登入使用",
+      "sms.verify.failure": "簡訊驗證失敗，請檢查您手機上的簡訊；或重新註冊",
+      "sms.verify.undone": "請檢查您手機上的簡訊",
+      "success": "登入成功",
+      "username_required": "帳號為必填欄位"
+    },
+    "no_server_available": "目前無可用的伺服器",
+    "register": {
+      "email.success": "我們已向您的電郵地址發送了一封驗證信",
+      "email_pattern": "Email 格式有誤",
+      "password_max_length": "密碼最大長度為 50 個字元",
+      "password_min_length": "密碼最小長度為 8 個字元",
+      "password_required": "密碼為必填欄位",
+      "phone_required": "手機號碼為必填欄位",
+      "phone_unique": "此手機號碼已註冊過",
+      "sms.success": "我們已向您的手機號碼發送了一封驗證簡訊",
+      "username_max_length": "帳號最大長度為 50 個字元",
+      "username_required": "帳號為必填欄位",
+      "username_unique": "此帳號已註冊過"
+    },
+    "reserve": {
+      "chat_record_duplicate": "您在該時段已預約了另一場會議",
+      "chat_record_exceed": "您選擇的時段預約已額滿"
+    },
+    "success": "成功"
+  }
+}

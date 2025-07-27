@@ -1,0 +1,106 @@
+workflow:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "web"'
+      when: always
+    - when: never
+
+stages:
+  - build
+  - deploy
+
+variables:
+  DEPLOY_PATH: "/home/centos/native-speaking-tour-guide"
+  DEPLOY_EXECUTE_PATH: "/opt/ubstream"
+
+build-job:
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+  stage: build
+  tags:
+    - ub-stream-api
+  image: node:22
+  cache:
+    paths:
+      - node_modules/
+  before_script:
+    - export DEPLOY_SERVER="104.199.218.243"
+  script:
+    - echo "Pulling latest code from Git..."
+    - git fetch origin
+    - git checkout origin/main
+    - git reset --hard origin/main
+    - echo "Installing npm dependencies..."
+    - npm install --legacy-peer-deps
+    - echo "Installing esbuild..."
+    - npm install @esbuild/linux-x64
+    - echo "Building the project..."
+    - npm run build
+  artifacts:
+    paths:
+      - dist/
+
+build-dev-job:
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "dev"'
+  stage: build
+  tags:
+    - ub-stream-api
+  image: node:22
+  cache:
+    paths:
+      - node_modules/
+  before_script:
+    - export DEPLOY_SERVER="35.188.76.59"
+  script:
+    - echo "Pulling latest code from Git..."
+    - git fetch origin
+    - git checkout origin/dev
+    - git reset --hard origin/dev
+    - echo "Installing npm dependencies..."
+    - npm install --legacy-peer-deps
+    - echo "Installing esbuild..."
+    - npm install @esbuild/linux-x64
+    - echo "Building the project..."
+    - npm run build:dev
+  artifacts:
+    paths:
+      - dist/
+
+deploy-job:
+  stage: deploy
+  tags:
+    - ub-stream-api
+  image: alpine:latest
+  before_script:
+    - |
+      if [ "$CI_COMMIT_BRANCH" == "main" ]; then
+        export DEPLOY_SERVER="104.199.218.243"
+      elif [ "$CI_COMMIT_BRANCH" == "dev" ]; then
+        export DEPLOY_SERVER="35.188.76.59"
+      else
+        echo "No deployment server configured for branch $CI_COMMIT_BRANCH"
+        exit 1
+      fi
+    - apk update && apk add openssh-client
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY_BASE64" | base64 -d > /tmp/ssh_private_key
+    - chmod 600 /tmp/ssh_private_key
+    - ssh-add /tmp/ssh_private_key
+    - mkdir -p ~/.ssh
+    - ssh-keyscan -H $DEPLOY_SERVER >> ~/.ssh/known_hosts
+    - echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    - ssh -o StrictHostKeyChecking=no $DEPLOY_USER@$DEPLOY_SERVER "echo 'SSH connection successful'"
+  script:
+    - echo "Transferring build artifacts to the production server..."
+    - echo "Clean remote folder"
+    - ssh $DEPLOY_USER@$DEPLOY_SERVER "sudo rm -rf $DEPLOY_PATH/**"
+    - echo "Creating tarball of the build artifacts"
+    - tar -czf dist_tour.tar.gz -C dist/native-speaking-tour-guide/browser .
+    - scp dist_tour.tar.gz $DEPLOY_USER@$DEPLOY_SERVER:$DEPLOY_PATH
+    - echo "Extracting tarball on the remote server"
+    - ssh $DEPLOY_USER@$DEPLOY_SERVER "tar -xzf $DEPLOY_PATH/dist_tour.tar.gz -C $DEPLOY_PATH"
+    - echo "Executing deployment script on the server..."
+    - ssh $DEPLOY_USER@$DEPLOY_SERVER "bash $DEPLOY_EXECUTE_PATH/deploy.sh --web"
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main" || $CI_COMMIT_BRANCH == "dev"'
